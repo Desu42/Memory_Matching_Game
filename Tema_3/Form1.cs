@@ -15,9 +15,9 @@ namespace Tema_3
     {
         //Variables
         //Select random value from X, Y lists and assign a new location to each card
-        Random CardLocation = new Random();
-        List<Point> Points = new List<Point>(); // X, Y values for each picturebox
-        List<Object> Tags = new List<Object>(); // store picture matches
+        readonly Random CardLocation = new Random();
+        readonly List<Point> Points = new List<Point>(); // X, Y values for each picturebox
+        readonly List<Object> Tags = new List<Object>(); // store picture matches
 
         PictureBox PendingImage1; // Store first flipped card
         PictureBox PendingImage2; // Store second flipped card
@@ -26,7 +26,6 @@ namespace Tema_3
         {
             InitializeComponent();
         }
-
         private void CardsHolder_Paint(object sender, EventArgs e)
         {
             // Play again means I have to reinitialize these
@@ -40,14 +39,13 @@ namespace Tema_3
                 Points.Add(picture.Location); // save picture locations on initialize
             }
             // Assign random location to each picture
-
-            //foreach (PictureBox picture in CardsHolder.Controls)
-            //{
-            //    int next = CardLocation.Next(0, Points.Count); // generate random location
-            //    Point p = Points[next]; // assign random location to a point
-            //    picture.Location = p; // assign location to picture
-            //    Points.Remove(p);  // make sure each location is unique
-            //}
+            foreach (PictureBox picture in CardsHolder.Controls)
+            {
+                int next = CardLocation.Next(Points.Count); // generate random location
+                Point p = Points[next]; // assign random location to a point
+                picture.Location = p; // assign location to picture
+                Points.Remove(p);  // make sure each location is unique
+            }
             // 1 second reveal all cards, then cover them and allow click
             timer1.Start();
             timer2.Start();
@@ -68,9 +66,22 @@ namespace Tema_3
             Card7Dup.Image = Card7.Image;
             Card8.Image = Properties.Resources.Plum;
             Card8Dup.Image = Card8.Image;
-
         }
-
+        private void GameWon(object sender, EventArgs e)
+        {
+            timer4.Stop();
+            var confirmResult = MessageBox.Show("You just won the game!\nPlay Again?",
+                                                "CONGRATULATIONS!!!",
+                                                MessageBoxButtons.OKCancel);
+            if (confirmResult == DialogResult.OK)
+            {
+                btnPlay_Click(sender, e);
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
@@ -81,7 +92,6 @@ namespace Tema_3
                 picture.Image = Properties.Resources.Background;
             }
         }
-
         private void timer2_Tick(object sender, EventArgs e)
         {
             int timer = Convert.ToInt32(start_time.Text);
@@ -125,11 +135,10 @@ namespace Tema_3
             timer4.Stop();
             CardsHolder_Paint(sender, e);
         }
-
-        // Change Card Value
-        // Handles most game logic. 
-        #region Cards
-        private void Card1_Click(object sender, EventArgs e)
+            // Change Card Value
+            // Handles most game logic. 
+            #region Cards
+            private void Card1_Click(object sender, EventArgs e)
         {
             // only comment first becaue it is the same for all. 
             // show image after click
@@ -165,6 +174,8 @@ namespace Tema_3
                     // update score
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 // if no match
                 else
@@ -183,7 +194,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card1Dup_Click(object sender, EventArgs e)
         {
             Card1Dup.Image = Properties.Resources.Raspberries;
@@ -207,6 +217,8 @@ namespace Tema_3
                     Tags.Add(Card1Dup.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -220,7 +232,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card2_Click(object sender, EventArgs e)
         {
             Card2.Image = Properties.Resources.Avocado;
@@ -244,6 +255,8 @@ namespace Tema_3
                     Tags.Add(Card2.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -257,7 +270,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card2Dup_Click(object sender, EventArgs e)
         {
             Card2Dup.Image = Properties.Resources.Avocado;
@@ -281,6 +293,8 @@ namespace Tema_3
                     Tags.Add(Card2Dup.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -294,7 +308,6 @@ namespace Tema_3
                 }
              }
         }
-
         private void Card3_Click(object sender, EventArgs e)
         {
             Card3.Image = Properties.Resources.Banana;
@@ -318,6 +331,8 @@ namespace Tema_3
                     Tags.Add(Card3.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -331,7 +346,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card3Dup_Click(object sender, EventArgs e)
         {
             Card3Dup.Image = Properties.Resources.Banana;
@@ -355,6 +369,8 @@ namespace Tema_3
                     Tags.Add(Card3Dup.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -368,7 +384,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card4_Click(object sender, EventArgs e)
         {
             Card4.Image = Properties.Resources.Cherries;
@@ -392,6 +407,8 @@ namespace Tema_3
                     Tags.Add(Card4.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -405,7 +422,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card4Dup_Click(object sender, EventArgs e)
         {
             Card4Dup.Image = Properties.Resources.Cherries;
@@ -429,6 +445,8 @@ namespace Tema_3
                     Tags.Add(Card4Dup.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -442,7 +460,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card5_Click(object sender, EventArgs e)
         {
             Card5.Image = Properties.Resources.Grapes;
@@ -466,6 +483,8 @@ namespace Tema_3
                     Tags.Add(Card5.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -479,7 +498,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card5Dup_Click(object sender, EventArgs e)
         {
             Card5Dup.Image = Properties.Resources.Grapes;
@@ -503,6 +521,8 @@ namespace Tema_3
                     Tags.Add(Card5Dup.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -516,7 +536,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card6_Click(object sender, EventArgs e)
         {
             Card6.Image = Properties.Resources.Grapefruit;
@@ -540,6 +559,8 @@ namespace Tema_3
                     Tags.Add(Card6.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -553,7 +574,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card6Dup_Click(object sender, EventArgs e)
         {
             Card6Dup.Image = Properties.Resources.Grapefruit;
@@ -577,6 +597,8 @@ namespace Tema_3
                     Tags.Add(Card6Dup.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -590,7 +612,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card7_Click(object sender, EventArgs e)
         {
             Card7.Image = Properties.Resources.Strawberry;
@@ -614,6 +635,8 @@ namespace Tema_3
                     Tags.Add(Card7.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -627,7 +650,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card7Dup_Click(object sender, EventArgs e)
         {
             Card7Dup.Image = Properties.Resources.Strawberry;
@@ -651,6 +673,8 @@ namespace Tema_3
                     Tags.Add(Card7Dup.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -664,7 +688,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card8_Click(object sender, EventArgs e)
         {
             Card8.Image = Properties.Resources.Plum;
@@ -688,6 +711,8 @@ namespace Tema_3
                     Tags.Add(Card8.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -701,7 +726,6 @@ namespace Tema_3
                 }
             }
         }
-
         private void Card8Dup_Click(object sender, EventArgs e)
         {
             Card8Dup.Image = Properties.Resources.Plum;
@@ -725,6 +749,8 @@ namespace Tema_3
                     Tags.Add(Card8Dup.Tag);
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    if (Tags.Count == 8)
+                        GameWon(sender, e);
                 }
                 else
                 {
@@ -738,7 +764,6 @@ namespace Tema_3
                 }
             }
         }
-
         #endregion
     }
 }
