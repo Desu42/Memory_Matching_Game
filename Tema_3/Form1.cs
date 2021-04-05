@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Tema_3
 {
@@ -26,25 +21,31 @@ namespace Tema_3
         {
             InitializeComponent();
         }
-        private void CardsHolder_Paint(object sender, EventArgs e)
+        private void GameWindow_Load(object sender, EventArgs e)
         {
             // Play again means I have to reinitialize these
             ScoreCounter.Text = "0";
             MoveCounter.Text = "0";
             start_time.Text = "1";
 
-            foreach (PictureBox picture in CardsHolder.Controls)
+            foreach (Control ctrl in CardsHolder.Controls)
             {
-                picture.Enabled = false; // can't click pictures before they loaded
-                Points.Add(picture.Location); // save picture locations on initialize
+                if (ctrl is PictureBox)
+                {
+                    ctrl.Enabled = false; // can't click pictures before they loaded
+                    Points.Add(ctrl.Location); // save picture locations on initialize
+                    Debug.Print(Points.Count.ToString());
+                }
             }
-            // Assign random location to each picture
-            foreach (PictureBox picture in CardsHolder.Controls)
+            foreach (Control ctrl in CardsHolder.Controls)
             {
-                int next = CardLocation.Next(Points.Count); // generate random location
-                Point p = Points[next]; // assign random location to a point
-                picture.Location = p; // assign location to picture
-                Points.Remove(p);  // make sure each location is unique
+                if (ctrl is PictureBox)
+                {
+                    int next = CardLocation.Next(Points.Count); // generate random location
+                    Point p = Points[next]; // assign random location to a point
+                    ctrl.Location = p; // assign location to picture
+                    Points.Remove(p);  // make sure each location is unique
+                }
             }
             // 1 second reveal all cards, then cover them and allow click
             timer1.Start();
@@ -66,6 +67,10 @@ namespace Tema_3
             Card7Dup.Image = Card7.Image;
             Card8.Image = Properties.Resources.Plum;
             Card8Dup.Image = Card8.Image;
+        }
+        private void CardsHolder_Paint(object sender, EventArgs e)
+        {
+            
         }
         private void GameWon(object sender, EventArgs e)
         {
@@ -764,6 +769,7 @@ namespace Tema_3
                 }
             }
         }
+
         #endregion
     }
 }

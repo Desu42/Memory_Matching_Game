@@ -99,7 +99,6 @@ namespace Tema_3
             this.CardsHolder.Name = "CardsHolder";
             this.CardsHolder.Size = new System.Drawing.Size(605, 603);
             this.CardsHolder.TabIndex = 0;
-            this.CardsHolder.Paint += new System.Windows.Forms.PaintEventHandler(this.CardsHolder_Paint);
             // 
             // Card8Dup
             // 
@@ -409,6 +408,7 @@ namespace Tema_3
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fruit Matching Game";
+            this.Load += new System.EventHandler(this.GameWindow_Load);
             this.CardsHolder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Card8Dup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Card8)).EndInit();
