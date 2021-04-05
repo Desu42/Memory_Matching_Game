@@ -123,7 +123,7 @@ namespace Tema_3
                 picture.Enabled = true;
             }
         }
-        // How long they take to solve to solve the memory game
+        // How long the player takes to solve the memory game
         private void timer4_Tick(object sender, EventArgs e)
         {
             int timer = Convert.ToInt32(start_time.Text);
@@ -134,12 +134,13 @@ namespace Tema_3
         private void btnPlay_Click(object sender, EventArgs e)
         {
             timer4.Stop();
-            CardsHolder_Paint(sender, e);
+            GameWindow_Load(sender, e);
         }
-            // Change Card Value
-            // Handles most game logic. 
-            #region Cards
-            private void Card1_Click(object sender, EventArgs e)
+        // Change Card Value
+        // Handles most game logic. 
+        // Created a region because this is the same code, but adapted to each card name
+        #region Cards
+        private void Card1_Click(object sender, EventArgs e)
         {
             // only comment first becaue it is the same for all. 
             // show image after click
@@ -157,12 +158,12 @@ namespace Tema_3
                 if (PendingImage1 != Card1)
                     PendingImage2 = Card1;
             }
-            // when I click on two images
-            if(PendingImage1 != null && PendingImage2 != null)
+            // when the player clicks on two images
+            if (PendingImage1 != null && PendingImage2 != null)
             {
-                // if match, I use Tag to compare match. 
+                // I use Tag to compare between images.
                 // My structure is CardX and CardXDup. I do comparisons between them.
-                if(PendingImage1.Tag == PendingImage2.Tag)
+                if (PendingImage1.Tag == PendingImage2.Tag)
                 {
                     // disable click
                     Card1.Enabled = false;
@@ -175,6 +176,7 @@ namespace Tema_3
                     // update score
                     ScoreCounter.Text = Convert.ToString(Convert.ToInt32(ScoreCounter.Text) + 10);
                     MoveCounter.Text = Convert.ToString(Convert.ToInt32(MoveCounter.Text) + 1);
+                    // Display game won message
                     if (Tags.Count == 8)
                         GameWon(sender, e);
                 }
@@ -190,7 +192,7 @@ namespace Tema_3
                     {
                         picture.Enabled = false;
                     }
-                    // reset
+                    // reset the cards who didn't match
                     timer3.Start();
                 }
             }
@@ -236,7 +238,7 @@ namespace Tema_3
         private void Card2_Click(object sender, EventArgs e)
         {
             Card2.Image = Properties.Resources.Avocado;
-            if(PendingImage1 == null)
+            if (PendingImage1 == null)
             {
                 PendingImage1 = Card2;
             }
@@ -245,9 +247,9 @@ namespace Tema_3
                 if (PendingImage1 != Card2)
                     PendingImage2 = Card2;
             }
-            if(PendingImage1 != null && PendingImage2 != null)
+            if (PendingImage1 != null && PendingImage2 != null)
             {
-                if(PendingImage1.Tag == PendingImage2.Tag)
+                if (PendingImage1.Tag == PendingImage2.Tag)
                 {
                     Card2.Enabled = false;
                     Card2Dup.Enabled = false;
@@ -274,7 +276,7 @@ namespace Tema_3
         private void Card2Dup_Click(object sender, EventArgs e)
         {
             Card2Dup.Image = Properties.Resources.Avocado;
-            if(PendingImage1 == null)
+            if (PendingImage1 == null)
             {
                 PendingImage1 = Card2Dup;
             }
@@ -283,9 +285,9 @@ namespace Tema_3
                 if (PendingImage1 != Card2Dup)
                     PendingImage2 = Card2Dup;
             }
-            if(PendingImage1 != null && PendingImage2 != null)
+            if (PendingImage1 != null && PendingImage2 != null)
             {
-                if(PendingImage1.Tag == PendingImage2.Tag)
+                if (PendingImage1.Tag == PendingImage2.Tag)
                 {
                     Card2.Enabled = false;
                     Card2Dup.Enabled = false;
@@ -307,7 +309,7 @@ namespace Tema_3
                     }
                     timer3.Start();
                 }
-             }
+            }
         }
         private void Card3_Click(object sender, EventArgs e)
         {
