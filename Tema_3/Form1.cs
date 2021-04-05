@@ -52,7 +52,7 @@ namespace Tema_3
             timer1.Start();
             timer2.Start();
             // Allocate image to each Card
-                        Card1.Image = Properties.Resources.Raspberries;
+            Card1.Image = Properties.Resources.Raspberries;
             Card1Dup.Image = Card1.Image;
             Card2.Image = Properties.Resources.Avocado;
             Card2Dup.Image = Card2.Image;
