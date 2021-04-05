@@ -8,3 +8,13 @@ C:\Users\User\Desktop\C#\Tema_3\Tema_3\obj\Debug\Tema_3.csproj.GenerateResource.
 C:\Users\User\Desktop\C#\Tema_3\Tema_3\obj\Debug\Tema_3.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\C#\Tema_3\Tema_3\obj\Debug\Tema_3.exe
 C:\Users\User\Desktop\C#\Tema_3\Tema_3\obj\Debug\Tema_3.pdb
+C:\Users\User\Desktop\C#\Memory_Matching_Game\Tema_3\bin\Debug\Tema_3.exe.config
+C:\Users\User\Desktop\C#\Memory_Matching_Game\Tema_3\bin\Debug\Tema_3.exe
+C:\Users\User\Desktop\C#\Memory_Matching_Game\Tema_3\bin\Debug\Tema_3.pdb
+C:\Users\User\Desktop\C#\Memory_Matching_Game\Tema_3\obj\Debug\Tema_3.csprojAssemblyReference.cache
+C:\Users\User\Desktop\C#\Memory_Matching_Game\Tema_3\obj\Debug\Tema_3.GameWindow.resources
+C:\Users\User\Desktop\C#\Memory_Matching_Game\Tema_3\obj\Debug\Tema_3.Properties.Resources.resources
+C:\Users\User\Desktop\C#\Memory_Matching_Game\Tema_3\obj\Debug\Tema_3.csproj.GenerateResource.cache
+C:\Users\User\Desktop\C#\Memory_Matching_Game\Tema_3\obj\Debug\Tema_3.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\C#\Memory_Matching_Game\Tema_3\obj\Debug\Tema_3.exe
+C:\Users\User\Desktop\C#\Memory_Matching_Game\Tema_3\obj\Debug\Tema_3.pdb

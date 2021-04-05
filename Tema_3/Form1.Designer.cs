@@ -116,7 +116,7 @@ namespace Tema_3
             // Card8
             // 
             this.Card8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card8.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card8.Image = global::Tema_3.Properties.Resources.Watermelon;
             this.Card8.Location = new System.Drawing.Point(304, 450);
             this.Card8.Name = "Card8";
             this.Card8.Size = new System.Drawing.Size(140, 140);
@@ -128,7 +128,7 @@ namespace Tema_3
             // Card7Dup
             // 
             this.Card7Dup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card7Dup.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card7Dup.Image = global::Tema_3.Properties.Resources.Strawberry;
             this.Card7Dup.Location = new System.Drawing.Point(158, 450);
             this.Card7Dup.Name = "Card7Dup";
             this.Card7Dup.Size = new System.Drawing.Size(140, 140);
@@ -152,7 +152,7 @@ namespace Tema_3
             // Card6Dup
             // 
             this.Card6Dup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card6Dup.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card6Dup.Image = global::Tema_3.Properties.Resources.Raspberries;
             this.Card6Dup.Location = new System.Drawing.Point(450, 304);
             this.Card6Dup.Name = "Card6Dup";
             this.Card6Dup.Size = new System.Drawing.Size(140, 140);
@@ -164,7 +164,7 @@ namespace Tema_3
             // Card6
             // 
             this.Card6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card6.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card6.Image = global::Tema_3.Properties.Resources.Plum;
             this.Card6.Location = new System.Drawing.Point(304, 304);
             this.Card6.Name = "Card6";
             this.Card6.Size = new System.Drawing.Size(140, 140);
@@ -176,7 +176,7 @@ namespace Tema_3
             // Card5Dup
             // 
             this.Card5Dup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card5Dup.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card5Dup.Image = global::Tema_3.Properties.Resources.Pineapple;
             this.Card5Dup.Location = new System.Drawing.Point(158, 304);
             this.Card5Dup.Name = "Card5Dup";
             this.Card5Dup.Size = new System.Drawing.Size(140, 140);
@@ -188,7 +188,7 @@ namespace Tema_3
             // Card5
             // 
             this.Card5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card5.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card5.Image = global::Tema_3.Properties.Resources.Peach;
             this.Card5.Location = new System.Drawing.Point(12, 304);
             this.Card5.Name = "Card5";
             this.Card5.Size = new System.Drawing.Size(140, 140);
@@ -200,7 +200,7 @@ namespace Tema_3
             // Card3
             // 
             this.Card3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card3.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card3.Image = global::Tema_3.Properties.Resources.Grapefruit;
             this.Card3.Location = new System.Drawing.Point(12, 158);
             this.Card3.Name = "Card3";
             this.Card3.Size = new System.Drawing.Size(140, 140);
@@ -212,7 +212,7 @@ namespace Tema_3
             // Card3Dup
             // 
             this.Card3Dup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card3Dup.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card3Dup.Image = global::Tema_3.Properties.Resources.Grapes;
             this.Card3Dup.Location = new System.Drawing.Point(158, 158);
             this.Card3Dup.Name = "Card3Dup";
             this.Card3Dup.Size = new System.Drawing.Size(140, 140);
@@ -224,7 +224,7 @@ namespace Tema_3
             // Card4
             // 
             this.Card4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card4.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card4.Image = global::Tema_3.Properties.Resources.Lemon;
             this.Card4.Location = new System.Drawing.Point(304, 158);
             this.Card4.Name = "Card4";
             this.Card4.Size = new System.Drawing.Size(140, 140);
@@ -236,7 +236,7 @@ namespace Tema_3
             // Card4Dup
             // 
             this.Card4Dup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card4Dup.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card4Dup.Image = global::Tema_3.Properties.Resources.Orange;
             this.Card4Dup.Location = new System.Drawing.Point(450, 158);
             this.Card4Dup.Name = "Card4Dup";
             this.Card4Dup.Size = new System.Drawing.Size(140, 140);
@@ -248,6 +248,7 @@ namespace Tema_3
             // Card2Dup
             // 
             this.Card2Dup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Card2Dup.Image = global::Tema_3.Properties.Resources.Cherries;
             this.Card2Dup.Location = new System.Drawing.Point(450, 12);
             this.Card2Dup.Name = "Card2Dup";
             this.Card2Dup.Size = new System.Drawing.Size(140, 140);
@@ -259,7 +260,7 @@ namespace Tema_3
             // Card2
             // 
             this.Card2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card2.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card2.Image = global::Tema_3.Properties.Resources.Banana;
             this.Card2.Location = new System.Drawing.Point(304, 12);
             this.Card2.Name = "Card2";
             this.Card2.Size = new System.Drawing.Size(140, 140);
@@ -271,7 +272,7 @@ namespace Tema_3
             // Card1Dup
             // 
             this.Card1Dup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Card1Dup.Image = global::Tema_3.Properties.Resources.Background;
+            this.Card1Dup.Image = global::Tema_3.Properties.Resources.Avocado;
             this.Card1Dup.Location = new System.Drawing.Point(158, 12);
             this.Card1Dup.Name = "Card1Dup";
             this.Card1Dup.Size = new System.Drawing.Size(140, 140);
@@ -283,6 +284,7 @@ namespace Tema_3
             // Card1
             // 
             this.Card1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Card1.Image = global::Tema_3.Properties.Resources.Background;
             this.Card1.Location = new System.Drawing.Point(12, 12);
             this.Card1.Name = "Card1";
             this.Card1.Size = new System.Drawing.Size(140, 140);
@@ -401,6 +403,7 @@ namespace Tema_3
             this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.CardsHolder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameWindow";
             this.ShowIcon = false;
