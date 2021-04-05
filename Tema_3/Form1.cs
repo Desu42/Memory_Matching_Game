@@ -34,7 +34,7 @@ namespace Tema_3
                 {
                     ctrl.Enabled = false; // can't click pictures before they loaded
                     Points.Add(ctrl.Location); // save picture locations on initialize
-                    Debug.Print(Points.Count.ToString());
+                    //Debug.Print(Points.Count.ToString());
                 }
             }
             foreach (Control ctrl in CardsHolder.Controls)
@@ -67,10 +67,6 @@ namespace Tema_3
             Card7Dup.Image = Card7.Image;
             Card8.Image = Properties.Resources.Plum;
             Card8Dup.Image = Card8.Image;
-        }
-        private void CardsHolder_Paint(object sender, EventArgs e)
-        {
-            
         }
         private void GameWon(object sender, EventArgs e)
         {
