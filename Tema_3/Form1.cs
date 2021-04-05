@@ -52,22 +52,22 @@ namespace Tema_3
             timer1.Start();
             timer2.Start();
             // Allocate image to each Card
-            Card1.Image = Properties.Resources.Raspberries;
-            Card1Dup.Image = Properties.Resources.Raspberries;
+                        Card1.Image = Properties.Resources.Raspberries;
+            Card1Dup.Image = Card1.Image;
             Card2.Image = Properties.Resources.Avocado;
-            Card2Dup.Image = Properties.Resources.Avocado;
+            Card2Dup.Image = Card2.Image;
             Card3.Image = Properties.Resources.Banana;
-            Card3Dup.Image = Properties.Resources.Banana;
+            Card3Dup.Image = Card3.Image;
             Card4.Image = Properties.Resources.Cherries;
-            Card4Dup.Image = Properties.Resources.Cherries;
+            Card4Dup.Image = Card4.Image;
             Card5.Image = Properties.Resources.Grapes;
-            Card5Dup.Image = Properties.Resources.Grapes;
+            Card5Dup.Image = Card5.Image;
             Card6.Image = Properties.Resources.Grapefruit;
-            Card6Dup.Image = Properties.Resources.Grapefruit;
+            Card6Dup.Image = Card6.Image;
             Card7.Image = Properties.Resources.Strawberry;
-            Card7Dup.Image = Properties.Resources.Strawberry;
+            Card7Dup.Image = Card7.Image;
             Card8.Image = Properties.Resources.Plum;
-            Card8Dup.Image = Properties.Resources.Plum;
+            Card8Dup.Image = Card8.Image;
 
         }
 
