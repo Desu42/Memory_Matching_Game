@@ -41,13 +41,13 @@ namespace Tema_3
             }
             // Assign random location to each picture
 
-            foreach (PictureBox picture in CardsHolder.Controls)
-            {
-                int next = CardLocation.Next(0, Points.Count); // generate random location
-                Point p = Points[next]; // assign random location to a point
-                picture.Location = p; // assign location to picture
-                Points.Remove(p);  // make sure each location is unique
-            }
+            //foreach (PictureBox picture in CardsHolder.Controls)
+            //{
+            //    int next = CardLocation.Next(0, Points.Count); // generate random location
+            //    Point p = Points[next]; // assign random location to a point
+            //    picture.Location = p; // assign location to picture
+            //    Points.Remove(p);  // make sure each location is unique
+            //}
             // 1 second reveal all cards, then cover them and allow click
             timer1.Start();
             timer2.Start();
